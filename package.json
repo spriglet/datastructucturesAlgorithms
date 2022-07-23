@@ -1,0 +1,34 @@
+{
+  "name": "projects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "jest": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js"
+  },
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "babel-jest": "^28.1.2",
+    "eslint": "^8.18.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/node": "^7.18.6",
+    "@babel/plugin-transform-modules-commonjs": "^7.18.6",
+    "jest": "^28.1.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "src"
+    ]
+  }
+}
