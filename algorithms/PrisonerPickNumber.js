@@ -15,7 +15,7 @@ const randomSortedNumbers = (choices) => {
 	let randomizedArray = []
 	// loop while array of numbers is not empty
 	while(numbers.length){
-		// choose a random number between 0 and the length of numbers array minus one
+		// choose a random number between 0 and the length of numbers array minus
 		const randomIndex = randomNumberBetween(0,numbers.length)
 		// use that index to get the value and push it into randomized array
 		randomizedArray.push(numbers[randomIndex])
