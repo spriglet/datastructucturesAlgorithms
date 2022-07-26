@@ -27,9 +27,7 @@ export class WeightedGraph {
 		let visited = {}
 		// declare shortestPath object and set defaults with the start point to zero and all other distances to zero and prev to null
 		const shortestPathObject = {}
-		Object.keys(this.adjacencyList).forEach((key) => {
-			shortestPathObject[key] = {distance: Infinity, prev:null }
-		})
+		for(const vertex in this.adjacencyList) shortestPathObject[vertex] = {distance: Infinity, prev:null }
 		shortestPathObject[vertexStart].distance = 0
 		// declare queue
 		let priorityQueue = new PriorityQueue()
@@ -41,6 +39,7 @@ export class WeightedGraph {
 		while(priorityQueue.values.length){
 			// dequeue vertex
 			const visitedVertex = priorityQueue.dequeue()?.data
+			if(visitedVertex === vertexEnd) break;
 			visited[visitedVertex] = true
 			// loop through neighbors
 			const neighbors = this.adjacencyList[visitedVertex] || []
@@ -57,7 +56,7 @@ export class WeightedGraph {
 				}
 			}
 		}
-		// build shortest patjh array and return it.
+		// build shortest path array and return it.
 		let backTrackVertex = shortestPathObject[vertexEnd]
 		let shortestPath = [vertexEnd]
 		while(backTrackVertex.prev){
